@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brian Ombasa — Portfolio</title>
+  <meta name="description" content="Brian Ombasa — Consulting, Marketing, Web Development, Article Writing & Proofreading. Based in Kisii, Kenya." />
+  <meta name="author" content="Brian Ombasa" />
+
+  <!-- Basic styling (self-contained) -->
+  <style>
+    :root{
+      --bg:#f6f8fb; --card:#fff; --accent:#004080; --muted:#6b7280; --accent-2:#117a65;
+      --maxw:1100px; --radius:12px; --pad:20px;
+      --shadow: 0 8px 30px rgba(16,24,40,0.06);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#111;line-height:1.6}
+    a{color:var(--accent);text-decoration:none}
+    header{background:linear-gradient(180deg, rgba(0,64,128,0.98), rgba(0,64,128,0.92)); color:#fff; padding:18px 16px; position:sticky; top:0; z-index:20;}
+    .container{max-width:var(--maxw); margin:0 auto; padding:var(--pad)}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{font-weight:700; font-size:1.1rem; letter-spacing:0.3px}
+    nav{display:flex; gap:14px; align-items:center}
+    nav a{color:rgba(255,255,255,0.95); padding:6px 8px; border-radius:6px}
+    nav a:hover{background:rgba(255,255,255,0.06)}
+    .menu-toggle{display:none}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px; align-items:center; padding:36px 0}
+    .hero h1{margin:0;font-size:2.1rem;color:#fff}
+    .hero p.lead{color:rgba(255,255,255,0.92); margin-top:8px}
+    .card{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px}
+    .contact-card p{margin:8px 0}
+
+    /* Sections */
+    section{padding:34px 0}
+    h2{color:var(--accent); margin:0 0 10px 0}
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+    .service{background:var(--card); padding:18px; border-radius:10px; box-shadow:var(--shadow)}
+    .portfolio-item{background:linear-gradient(180deg,#fff,#f7fbff); padding:16px; border-radius:10px; box-shadow:var(--shadow)}
+    .meta{color:var(--muted); font-size:.95rem}
+
+    ul.skills{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+    ul.skills li{background:#eef6ff;padding:6px 10px;border-radius:999px;color:var(--accent);font-weight:600;font-size:.9rem}
+
+    /* Footer */
+    footer{background:#fff; padding:18px 0; border-top:1px solid #efefef; text-align:center; color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr; padding-bottom:20px}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:600px){
+      nav{display:none}
+      .menu-toggle{display:block;background:transparent;border:1px solid rgba(255,255,255,0.15);color:#fff;padding:6px 10px;border-radius:8px}
+      .container{padding-left:14px;padding-right:14px}
+      .grid{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--accent);color:#fff;font-weight:700}
+    .outline{background:transparent;border:1px solid #e6eefb;color:var(--accent)}
+    .gap{height:12px}
+    .small{font-size:.9rem}
+    form input, form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e8eef7;background:#fbfdff}
+    form button{margin-top:8px}
+    .badge{display:inline-block;padding:6px 10px;background:var(--accent-2);color:#fff;border-radius:999px;font-weight:700}
+    .cv-link{display:inline-block;margin-top:8px}
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container topbar">
+      <div class="brand">Brian Ombasa</div>
+      <nav id="mainNav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#whitepaper">White Paper</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false">Menu</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="container">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div>
+        <h1 id="heroTitle">Brian Ombasa</h1>
+        <p class="lead">Consulting • Freelancing • Marketing • Web Development • Article Writing • Proofreading</p>
+        <p class="muted">Based in Kisii, Kenya — I build clear strategies and polished deliverables that help businesses grow and communicate with heart and impact.</p>
+
+        <div class="gap"></div>
+        <a class="btn" href="#contact">Hire Me</a>
+        <a class="btn outline cv-link" href="#" id="downloadCV">Download CV (PDF)</a>
+
+        <div class="gap"></div>
+        <div class="card small">
+          <p class="muted"><strong>Quick facts</strong></p>
+          <p class="small"><strong>Email:</strong> <a href="mailto:brianombasa045@gmail.com">brianombasa045@gmail.com</a><br>
+          <strong>Phone:</strong> +254 112 820 770<br>
+          <strong>Location:</strong> Kisii, Kenya</p>
+          <p class="muted small">Website undergoing maintenance for advanced responsiveness to clients.</p>
+        </div>
+      </div>
+
+      <aside class="card contact-card" aria-labelledby="contactTitle">
+        <h3 id="contactTitle">Contact</h3>
+        <p class="meta"><strong>Email:</strong> <a href="mailto:brianombasa045@gmail.com">brianombasa045@gmail.com</a></p>
+        <p class="meta"><strong>Phone:</strong> +254 112 820 770</p>
+        <p class="meta"><strong>Location:</strong> Kisii, Kenya</p>
+        <div style="margin-top:8px"><a class="btn" href="mailto:brianombasa045@gmail.com">Email Me</a></div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="aboutTitle">
+      <div class="card">
+        <h2 id="aboutTitle">About Me</h2>
+        <p>I am a multidisciplinary consultant and freelancer with experience in marketing, web development, article writing, proofreading, and digital tools such as HubSpot. My research into humanity inspired the Heart-to-Heart (H2H) business model — a values-driven initiative focused on spreading care, creating economic opportunities, and tackling food insecurity through participatory solutions like crop-funding and crowdfunding.</p>
+        <p>I deliver polished white papers, marketing strategy, and digital assets that help ideas convert into real-world impact.</p>
+
+        <div class="gap"></div>
+        <strong>Skills & Tools</strong>
+        <ul class="skills" aria-label="Skills list">
+          <li>Consulting</li>
+          <li>Marketing (HubSpot)</li>
+          <li>Web Dev (HTML/CSS/JS)</li>
+          <li>Article Writing</li>
+          <li>Proofreading</li>
+          <li>White paper authoring</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" aria-labelledby="servicesTitle">
+      <h2 id="servicesTitle">Services</h2>
+      <div class="grid">
+        <div class="service">
+          <h3>Consulting & Strategy</h3>
+          <p class="meta">Business planning, market entry, H2H model strategy, growth planning.</p>
+        </div>
+        <div class="service">
+          <h3>Marketing & HubSpot</h3>
+          <p class="meta">Lead generation, CRM set-up, campaign automation, content strategy.</p>
+        </div>
+        <div class="service">
+          <h3>Web Development</h3>
+          <p class="meta">Responsive HTML/CSS sites, landing pages, portfolio sites, WordPress support.</p>
+        </div>
+        <div class="service">
+          <h3>Writing & Editing</h3>
+          <p class="meta">Articles, blog posts, white papers (e.g., Brussels Paper/H2H), proofreading and editing.</p>
+        </div>
+        <div class="service">
+          <h3>Design Support</h3>
+          <p class="meta">Business cards, mockups, branding alignment with brochures/flyers (print-ready files).</p>
+        </div>
+        <div class="service">
+          <h3>Project Partnerships</h3>
+          <p class="meta">Partner outreach, sponsor proposals, youth task force coordination for H2H initiatives.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" aria-labelledby="portfolioTitle">
+      <h2 id="portfolioTitle">Portfolio</h2>
+      <div class="grid">
+        <div class="portfolio-item">
+          <strong>H2H White Paper (Author)</strong>
+          <p class="meta">Developed a detailed white paper and crowdfunding strategy focused on crop-funding and participatory economy (Brussels Paper / H2H).</p>
+          <p><a href="#" id="wpDownload">Download White Paper (PDF)</a></p>
+        </div>
+
+        <div class="portfolio-item">
+          <strong>VF Business Card — Sample</strong>
+          <p class="meta">Designed a double-sided business card with brand-aligned mockups and print-ready files.</p>
+          <p><a href="#" id="cardDownload">Download Sample PDF</a></p>
+        </div>
+
+        <div class="portfolio-item">
+          <strong>Crop-Funding Slide Content</strong>
+          <p class="meta">Prepared slide-ready content and single-page pitch for crowdfunding initiative.</p>
+          <p><a href="#" id="slidesDownload">Download Slides (PDF)</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHITE PAPER SUMMARY -->
+    <section id="whitepaper" aria-labelledby="wpTitle">
+      <div class="card">
+        <h2 id="wpTitle">Crowdfunding for a Fairer World — Summary</h2>
+        <p>This initiative proposes a participatory economy driven by crowdfunding and crop-funding, starting with agri-food commodities. Key activities: youth task forces, public campaigns, school programs, social media mobilization, and partnership development with global sponsors to support local farmers and foster a universal income discussion.</p>
+        <p class="meta">Want the full white paper or a custom proposal? Click below to request the PDF.</p>
+        <a class="btn" href="mailto:brianombasa045@gmail.com?subject=White%20Paper%20Request&body=Please%20send%20the%20full%20H2H%20white%20paper.">Request Full White Paper</a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contactTitle">
+      <h2 id="contactTitle">Contact</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Get in touch</h3>
+          <p class="muted">Interested in a project or collaboration? Send a quick message or email me.</p>
+
+          <!-- Simple contact form using mailto: (works in most clients) -->
+          <form id="contactForm" action="mailto:brianombasa045@gmail.com" method="get" onsubmit="return handleForm(event)">
+            <label for="name">Your name</label><br>
+            <input id="name" name="name" type="text" placeholder="Jane Doe" required>
+
+            <label for="message">Message</label><br>
+            <textarea id="message" name="message" rows="6" placeholder="Hello Brian — I am interested in..." required></textarea>
+
+            <button class="btn" type="submit">Send Message</button>
+          </form>
+        </div>
+
+        <aside class="card">
+          <h3>Contact Details</h3>
+          <p class="meta"><strong>Email:</strong> <a href="mailto:brianombasa045@gmail.com">brianombasa045@gmail.com</a></p>
+          <p class="meta"><strong>Phone:</strong> +254 112 820 770</p>
+          <p class="meta"><strong>Location:</strong> Kisii, Kenya</p>
+
+          <div style="margin-top:12px">
+            <p class="muted">Website temporarily under maintenance for advanced responsiveness to clients.</p>
+            <p><span class="badge">Available for hire</span></p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Brian Ombasa — Consulting, Marketing & Web Development. All rights reserved.</p>
+      <p class="muted small">Designed with care — Heart-to-Heart (H2H) values.</p>
+    </div>
+  </footer>
+
+  <!-- Minimal JavaScript for menu & form handling -->
+  <script>
+    // Menu toggle for small screens
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    menuToggle && menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      // simple toggle by injecting a small nav
+      if (!expanded) {
+        mainNav.style.display = 'flex';
+        mainNav.style.flexDirection = 'column';
+        mainNav.style.position = 'absolute';
+        mainNav.style.right = '16px';
+        mainNav.style.top = '64px';
+        mainNav.style.background = 'rgba(0,64,128,0.95)';
+        mainNav.style.padding = '12px';
+        mainNav.style.borderRadius = '10px';
+      } else {
+        mainNav.style.display = '';
+        mainNav.style.flexDirection = '';
+        mainNav.style.position = '';
+        mainNav.style.background = '';
+        mainNav.style.padding = '';
+        mainNav.style.borderRadius = '';
+      }
+    });
+
+    // Contact form handler: constructs a mailto link (works if user has mail client)
+    function handleForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !message){ alert('Please complete the form'); return false; }
+      const subject = encodeURIComponent('Website contact from ' + name);
+      const body = encodeURIComponent(message + "\\n\\nFrom: " + name);
+      const mailto = 'mailto:brianombasa045@gmail.com?subject=' + subject + '&body=' + body;
+      window.location.href = mailto;
+      return false;
+    }
+
+    // Placeholder downloads — replace with real file URLs or repo paths
+    document.getElementById('downloadCV').addEventListener('click', function(e){
+      e.preventDefault();
+      alert('CV download placeholder. Upload your CV to your repo and update the link.');
+    });
+    document.getElementById('wpDownload').addEventListener('click', function(e){
+      e.preventDefault();
+      alert('White paper download placeholder. Upload the PDF and update the link.');
+    });
+    document.getElementById('cardDownload').addEventListener('click', function(e){
+      e.preventDefault();
+      alert('Business card sample placeholder. Upload the PDF and update the link.');
+    });
+    document.getElementById('slidesDownload').addEventListener('click', function(e){
+      e.preventDefault();
+      alert('Slides download placeholder. Upload the PDF and update the link.');
+    });
+  </script>
+</body>
+</html>
